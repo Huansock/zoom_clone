@@ -6,15 +6,25 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
         link(rel="stylesheet", href="https://unpkg.com/mvp.css")
+        style 
+            include home.css
     body 
         header  
             h1 noom
         main
-            form#nick
-                input(type="text", name="nickname", placeholder="write a nickname", required)
-                button Save
-            ul    
-            form#message
-                input(type="text", name="text 1", placeholder="write a msg", required)
-                button Send 
+            div#welcome 
+                form
+                    input(type="text", name="room name", placeholder="room name", required)
+                    button Enter Room
+            #room 
+                h3
+                ul 
+                form#nickname
+                    input(type="text", name="message", placeholder = "write some nickname")
+                    button Send
+                form#msg
+                    input(type="text", name="message", placeholder = "write some messages")
+                    button Send
+        
+        script(src="/socket.io/socket.io.js") 
         script(src="/public/js/app.js") 
